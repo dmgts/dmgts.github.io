@@ -637,3 +637,8 @@ section{margin-top: 40px}
     margin-right: auto;
     max-width: 80%; 
 }
+
+.space-after {
+    margin-bottom: 40px; 
+}
+
