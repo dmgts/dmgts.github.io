@@ -164,57 +164,91 @@
 
 						<h3>1. Project Overview</h3>
 
-						<p>In the vast universe of collectible card games, "Star Wars Unlimited" offers a galaxy filled with intrigue, strategy, and untold value.
-							My journey began after me and my older brother, a big card games enthusiast, decided to each acquire a "Spark of Rebellion Case".
-							Our mission was clear: to explore the depths of our collection, analyzing its value not just for the sake of curiosity, but to forge a path for strategic reselling. 
-						</p>
+						<p> Jumping into the world of "Star Wars Unlimited" card games, my older brother (a huge fan of card games) and I decided to get our own "Spark of Rebellion Case". 
+							We wanted to see not just how cool our collection could be, but also its value and how we might sell some cards smartly without messing up our game.</p>
+						
+						<p> To keep everything organized and make sense of it all, I used Excel. It helped me catalog every card and set up a dashboard. 
+							This way, I could easily see the answers to our big questions about the total value and the best way to sell without losing our chance to play and win. </p>
 
-						<h3>2. Card indexing and current market price search</h3>
+						<hr>
 
 						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/actualCards.jpg" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+						
+						<h3>2. Card indexing and current market price search</h3>
 
-						<ul>
-						<li><strong>Datetime Column Segregation:</strong> The project required the segregation of the combined Datetime column into distinct Date and Time columns to facilitate more nuanced analysis.</li>
-						<li><strong>Column Label Refinement:</strong> For enhanced interpretability, modifications were made to column labels.</li>
-						<li><strong>Odds Data Extraction and Standardization:</strong> The odds data were extracted from the selection column and standardized to ensure consistency across the dataset.</li>
-						<li><strong>Selection Column Purification: </strong>A comprehensive purge of the selection column was undertaken to eliminate extraneous information.</li>
-						<li><strong>Data Standardization via 'Find and Replace':</strong> This method was employed to unify the bet_type and result columns, thereby ensuring data uniformity.</li>
-						<li><strong>Market Data Extraction and Cleansing:</strong> Market-related information was meticulously extracted and cleansed from the event column to maintain data integrity.</li>
-						<li><strong>Profit and Loss (P/L) Computation: </strong> A new P/L column was introduced, enabling the direct assessment of financial performance.</li>
-						<li><strong>Live Bet Designation</strong> A specific column was allocated to accurately indicate live betting instances, utilizing insights from the selection column.</li>
-						<li><strong>Data Integrity Completion:</strong> Efforts were made to identify and rectify any data omissions, ensuring the dataset's comprehensiveness and reliability.</li>
-						</ul>
+						<p> At the start of our project, we took every card in our "Star Wars Unlimited" collection and listed them in an Excel spreadsheet. For each card, we also found its 
+							current selling price on the "https://www.cardmarket.com/" website. This way, we could see both the name of each card and how much it might sell for, all in one place.
+						</p>
 
-						<div class="image-wrap"><img src="images/actualCards.jpg" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
-
-
-						<p>From this:</p>
+						<p> To make our spreadsheet even more useful, we used Excel's conditional formatting feature. This let us color-code the cards. With different colors, 
+							we could quickly tell which cards were available for certain game functions, which ones were rare or common, and how their market prices compared. 
+							This color-coding made it easy to spot patterns and differences at a glance, setting us up nicely to dive deeper into analyzing our collection. 
+							This first step of organizing and pricing was key to getting a clear picture of what our collection looked like in terms of variety and potential value.
+						</p>
+						
+						<p>This is how part of our Excel Sheet looks after we are done:</p>
 
 						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/swdata.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
 
 						<hr>
-
+						
 						<h3>3. Analysis and Metrics Calculation</h3>
 
-						<p>Utilizing pivot table functionalities, critical metrics were computed to evaluate the betting account's strategic effectiveness and financial health, including:</p>
+						<p>Moving forward with our analysis, we honed in on two critical questions:</p>
+							
+						<p> First,<strong>what is the total worth of our "Star Wars Unlimited" collection, and how is this value distributed?</strong></p>
+						
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/expvalue.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
 
-						<ol>
-						<li><strong> Return on Investment (ROI):</strong> This metric evaluates the profitability of betting activities.</li>
-						<li><strong> Picks Volume:</strong> Reflects the frequency of betting activiti</li>
-						<li><strong> Hit Rate Accuracy:</strong> Measures the precision of bet selections.</li>
-						<li><strong> Profit/Loss (P/L):</strong> Provides a financial summary indicating net outcomes.</li>
-						<li><strong> Average Stake:</strong> Reveals the standard bet size, indicating the risk tolerance.</li>
-						<li><strong> Average Odds:</strong> Offers insights into the risk-return profile of the betting strategy.</li>
-						</ol>	
-			
+						<p>At the time of our market search, our total expected value amounted to 776.51€. Of course, this is only an approximate evaluation 
+							and does not take into account transportation, packaging, and other potential costs.</p>
+						
+						<p>Now, on value distribution, we first checked total value by type.</p>
+
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/valuebytype.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+
+						<p>And then, total value by rarity.</p>
+						
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/valuebyrarity.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+
+						<p>Total value, though, is only half the picture. In how many cards is this value distributed? Normal cards seem to hold much value, almost 47% of the total expected value, 
+							but would it be a viable strategy to try and harvest this value? </p>
+
+						<p>We needed a bit more information:</p>
+
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/totalcards.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+						
+						<p> Okay, percentage-wise, normals do hold a decent amount of value, but €364 in 2039 cards could be a tricky play. With an average of 0.17€ per card,
+							 selling them in bulk seems like the only way. That's a good insight, but probably not our first strategy to pursue; we'll need to keep looking! </p>
+						
+
+						<p> So then,<strong> what are some effective strategies for extracting value through reselling parts of our collection without compromising our competitive edge in the game?</strong></p>
+
+						<p>Strategy number one comes directly from here:</p>
+
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/top5.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+						
+						<p>Now, this is valuable information. The top 5 cards represent €323 or 41.6% of the total expected value. Interestingly, the Darth Vader card, 
+							which is allowed up to three times in play according to game rules, appears three times in our collection. Given Darth Vader's popularity, this could be a significant advantage. 
+							Though it means I'd need to stick to playing Rebel, it's a trade-off I'm willing to make. We might be onto a winning strategy here.</p>
+
+						<p>Then, we can either focus on selling a few other valuable cards:</p>
+
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/valuablecards.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+
+						<p>Or, utilising some bulk selling.</p>
+
+						<div class="image-wrap"><img src="/assets/images/projects/pj.SWunlimitedCards/rest.PNG" alt="" data-cms-original-src="/images/demo/post-01.jpg"></div>
+						
 						<hr>
 
-						<h3>4. Project Impact</h3>
+						<h3>4. Wrapping up</h3>
 
 						<p>
-							This initiative not only underscored my proficiency in managing and analyzing complex data sets but also deepened the understanding of wagering behaviors 
-							and financial outcomes. By generating actionable insights through meticulously calculated metrics, my contribution aids in enhancing strategic decision-making
-							and operational efficiency.
+							As we wrap up our look at the "Star Wars Unlimited" cards, we learned a lot about their worth and how to smartly sell some without spoiling the fun of the game. 
+							This project showed us how to balance making money with keeping the game exciting. I had a great time figuring out my collection's value, just as I love playing the game. 
+							These lessons on card value are something I'll use as I keep collecting and playing. 
+							This adventure into the world of card collecting was as fun as it was educational, and I can't wait to put what I've learned into action.
 						</p>
 
 
@@ -222,7 +256,7 @@
 
 						
 
-						<p>kati pou elege na mou milisoun an theloun? kai thanks for reading?</p>
+						<p>Thanks for reading. Feel free to reach out for any comment.</p>
 
 
 					</div>
