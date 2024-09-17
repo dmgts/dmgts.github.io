@@ -369,16 +369,128 @@
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/car_scrapper.PNG" alt="How Seasonal Changes Affect Used Car Prices in Greece."/>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/season1.jpg" alt="How Seasonal Changes Affect Used Car Prices in Greece."/>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">
-                                        In this project, I delve into the intriguing hypothesis that used car prices in Greece exhibit significant price differentiation. 
-                                        I used python to scrap data from Greece's largest used car website in 3 month intervals in 2024. 
-                                        I aimed to validate with data an observation I have made the previous years. Car prises dropped in winter months and again rised in the Summer. 
-                                        Very intrigued, decided to formulate a plan that could validate my empirical observation and otentially offer valuable insights.
+                                    <p class="mb-5"><h2>Project Overview</h2>
+                                        <p>In this project, my aim was to explore the data and see if car prices indeed rise in the winter months and drop in the summer.
+                                            Along the way, I also hoped to improve my Python skills, especially when it came to web scraping and data analysis.
+                                            Inspired by the thought of selling my car the next year and after hearing a similar advice from a merchand friend, 
+                                            I decided to gather some data to have a more solid understanding of the market trends and pricing.
+                                            
+                                            So, I decided to use python and Selenium to scrap data from Greece's largest used car website in 3 month intervals in 2024. 
+                                        </p>
+                                        <p> Here's a snapshot of the web scraping script I used to collect the data:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/car_scrapper.PNG" alt="web_scrappers">
                                     </p>
                                     <hr>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <p class="mb-5"><h2>First steps processing and cleaning the data</h2>
+                                        <p>Once the data was successfully scraped, the next step was to clean and process it for analysis. </p>
+                                        <p>
+                                           First, I needed to consolidate the CSV files where the scraped data was saved. Since I scraped thousands of pages each time, 
+                                           I often hit the server's request limit and had to pause before resuming the process. To prevent losing all the data in case the server banned me or the script failed, 
+                                           I chose to break the data into several smaller files. This way, I could avoid starting over from scratch.
+                                        </p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/CSV_consolidation_script.PNG" alt="consolidation_script">
+                                        <p>  
+                                           Next I moved on on loading and cleanind the data. This involved removing duplicates, handling missing values and outliers, and formatting the data for easier manipulation. 
+                                           Up until this point, I hadm't worked with Jupyter Notebooks, but from here on, I switched to using them to make data handling and manipulation more efficient. 
+                                           The interactive environment of Jupyter made it easier to test code snippets, visualize the data, and keep track of my progress as I cleaned and analyzed the dataset.                            
+                                           Here's how I approached the data processing phase:
+                                        </p>
+                                        <p>First, I installed and imported the necessary libraries:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/1_installLibraries.PNG" alt="cleaning_car_data"> 
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/1a_import_libraries.PNG" alt="cleaning_car_data"> 
+                                        <p>Then, imported the data and took a first look:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/2_import_&_first_look.PNG" alt="cleaning_car_data"> 
+                                        <p>Decided to drop 'date' and 'pagenumber' columns, since they were only helper columns for scrapping and not usefull anymore. Also, renamed a few columns for clarity</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/3_drop_and_renameColumns.PNG" alt="cleaning_car_data">
+                                        <p>Next, I checked data types and shape:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/4a_closerLook_basicInfo_(305535 rows).PNG" alt="cleaning_car_data"> 
+                                        <p>Many unexpected objects types, so I checked for missing values before I attempt to .describe():</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/4b_closerLook_missing_values.PNG" alt="cleaning_car_data">
+                                        <p>The scrapper did a good job of not leaving blank values. So, I formatted the data types appropriately:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/5_changeDataTypes.PNG" alt="cleaning_car_data"> 
+                                        <p>And took a look again at our data again:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/5b_head_ descsribe_after_processing.PNG" alt="cleaning_car_data">
+                                        <p>Next, looked for duplicates and deleted them:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/6_deduplicate.PNG" alt="cleaning_car_data">
+                                        <p>Out of the initial 305,595 rows, the data was reduced to 282,995 after deduplicating, meaning 22,600 entries were deleted—about 7.39% of the original dataset. 
+                                            This reduction is reasonable, given the high volume of pages scraped and the fact that the website mixed in a couple of ads with the listings using a dynamic object, 
+                                            making it impossible to filter them out while scraping frontend with Selenium.</p>
+                                        <p>Next, I looked for outliers in the price(€), mileage(km), and engine(cc) columns. I started by visualising the price(€) column for a first look:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/7_boxplot_price.PNG" alt="cleaning_car_data">
+                                        <p>Listings costing under 1500€ where excluded during scrapping. There are a few very expensive cars close to 1m euros, that are definatelly outliers, 
+                                            and many that according to the right whisker of this boxplot are branded outliers. I thought it would be helpfull to see the price of that right whisker:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/8_right_whiskers_on_price.PNG" alt="cleaning_car_data">
+                                        <p>Almost 32000€, which felt too low to exclude all cars above it, perhaps something around the 100k mark is more reasonable for the car market. 
+                                            Retrieved the number of listings above 100k euros, 2016 listings or the 0.71% of our initial data, seemed as a safer option for exlusion. 
+                                            Followed the same process for the 'mileage(km)' column, where I excluded the 1st and 99th percentile, and 'engine(cc)' column, where I excluded anything 
+                                            below the 0.4% and 99.9% of the data, and ended up with 274192 listings:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/9_mileage_2_percentiles.PNG" alt="cleaning_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/10_cleaned_df.PNG" alt="cleaning_car_data">
+                                    </p>
+                                    <hr>
+                                    <p class="mb-5"><h2>Exploratory Data Analysis (EDA)</h2>
+                                        <p>At this point, I already had taken a first taste of the data, and moved onto exploring it a bit more now that were clean:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/11_clean_describe.PNG" alt="eda_car_data">
+                                        <p>First look in the clean data:
+                                            <ul>
+                                                <li>The median price of €11,000 suggests that typical cars in the dataset are more affordable, while the higher mean price of €14,425 indicates that a few expensive cars are skewing the average upward.</li>
+                                                <li>Mileage: The mileage data shows that most cars have significant usage, with a median mileage of 133,300 km. The high mileage is typical for a used car dataset.</li>
+                                                <li>Engine Size: Most cars in the dataset fall within the typical range of 1,300 cc to 1,800 cc.</li>
+                                            </ul>
+                                        </p>
+                                        <p>Visualised the price distribution, and saw that most car prices fall between €5,000 and €20,000. The distribution is right-skewed, indicating a small number of high-priced cars:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/12_plotting_price_distribution.PNG" alt="eda_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Price_distribution_plot.png" alt="eda_car_data">
+                                        <p>Followed, similar process for the engine sizes and found that the majority of cars have engines between 1,000 cc and 2,000 cc, which is typical for personal vehicles:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/engine_distribution.png" alt="eda_car_data">
+                                        <p>And the dame for mileage, where most cars have mileage between 50,000 and 200,000 kilometers, with very few having extremely high or low mileage:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/mileage_distribution.png" alt="eda_car_data">
+                                        <p>Then, I looked at my categorical data, starting with fuel types, where by far the most common fuel types are Petrol and Diesel, consisting almost the 91% of the total listings.
+                                           Another noticable insight here, is that almost one in everey twenty cars sold, use Gas/lpg as a fuel:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/13_plot_fuel_types.PNG" alt="eda_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/fuel_types.png" alt="eda_car_data">
+                                        <p>Last, looked at the number of listings by season, that are fairly even across seasons, with a slight increase during the Spring:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/14_plotting_the_listings_by_season.PNG" alt="eda_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/listings_by_season.png" alt="eda_car_data">
+                                    </p>
+                                    <hr>
+                                    <p class="mb-5"><h2>Testing the Seasonal Pricing Hypothesis</h2>
+                                        <p>After gaining a better understanding of the dataset through the EDA, it was time to focus on testing my initial hypothesis: 
+                                            whether car prices tend to rise in the winter and drop in the summer. For that, I calculated and visualized the mean and median car prices for each season</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/15_mean_median_per_season.PNG" alt="hypothesis_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/mean_median_per_season.png" alt="hypothesis_car_data">
+                                        <p>From that, I couls see that:
+                                            <ul>
+                                                <li>The mean prices across the three seasons—Winter (€14,290), Spring (€14,256), and Summer (€14,745)—are relatively close. The mean increase from winter to summer of 3.18%, and the median increase in the same period suggests that, overall, car prices are fairly stable throughout the year, with no drastic seasonal fluctuations.</li>
+                                                <li>More, it contradicts the initial hypothesis, that car prices tend to rise inthe winter. The data at hand, so the exact opposite, with car prices increasing during the summer.</li>
+                                            </ul>
+                                        </p>
+                                        <p>So, what if I tried to make the similar comparisons in various segments of the data?</p>
+                                        <p>I intially segmented the data based on engine sizes, using the Greek vehicle tax categories as a framework:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/16_count_car_by_price_category.PNG" alt="hypothesis_car_data"> 
+                                        <p>And used a bar graph to quickly view them:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/count_of_cars_by_engine_category.png" alt="hypothesis_car_data">
+                                        <p>Then, grouped by 'Engine Category' and 'Season'; calculated the mean and median of 'price(€)', and visualised them:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/17_calculate_&_visualise_mean_meadian_car_price_by_season_&_engine_category.PNG" alt="hypothesis_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Mean_Price_Trends_by_Engine_Category_&_Season.png" alt="hypothesis_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Median_Price_Trends_by_Engine_Category_&_Season.png" alt="hypothesis_car_data">
+                                        <p>Both graphs are consistent in indicating that car prices tend to increase from Winter to Summer. This suggests a seasonal trend where prices 
+                                            rise as we move toward the summer months, which is again contradicting my initial hypothesis. What is more, the flatter trend for smaller 
+                                            engine categories (A, B) in the second and third graph suggests that these categories don't contribute much to the overall price increases from the winter to the summer.</p>
+                                        <p>I followed the same logic, to explore further segments of my data, starting with mileage categories and season:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Mean_Price_Trends_by_Mileage_Category_&_ Season.png" alt="hypothesis_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Median_Price_Trends_by_Mileage_Category_&_ Season.png" alt="hypothesis_car_data">
+                                        <p>And then segmenting to price categories and combine them with season:</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Mean_Price_Trends_by_Price_Category_&_ Season.png" alt="hypothesis_car_data">
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Median_Price_Trends_by_Price_Category_&_ Season.png" alt="hypothesis_car_data">
+                                        <p></p>
+                                        
+                                    </p>
+                                    <hr>
+                                    <p class="mb-5">Thanks for reading. Feel free to reach out for any comment.</p>
+                                    <hr>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
