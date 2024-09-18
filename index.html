@@ -392,8 +392,8 @@
                                         </p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/CSV_consolidation_script.PNG" alt="consolidation_script">
                                         <p>  
-                                           Next I moved on on loading and cleanind the data. This involved removing duplicates, handling missing values and outliers, and formatting the data for easier manipulation. 
-                                           Up until this point, I hadm't worked with Jupyter Notebooks, but from here on, I switched to using them to make data handling and manipulation more efficient. 
+                                           Next I moved on on loading and cleaning the data. This involved removing duplicates, handling missing values and outliers, and formatting the data for easier manipulation. 
+                                           Up until this point, I hadn't worked with Jupyter Notebooks, but from here on, I switched to using them to make data handling and manipulation more efficient. 
                                            The interactive environment of Jupyter made it easier to test code snippets, visualize the data, and keep track of my progress as I cleaned and analyzed the dataset.                            
                                            Here's how I approached the data processing phase:
                                         </p>
@@ -410,7 +410,7 @@
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/4b_closerLook_missing_values.PNG" alt="cleaning_car_data">
                                         <p>The scrapper did a good job of not leaving blank values. So, I formatted the data types appropriately:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/5_changeDataTypes.PNG" alt="cleaning_car_data"> 
-                                        <p>And took a look again at our data again:</p>
+                                        <p>And took a look at data again:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/5b_head_ descsribe_after_processing.PNG" alt="cleaning_car_data">
                                         <p>Next, looked for duplicates and deleted them:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/6_deduplicate.PNG" alt="cleaning_car_data">
@@ -431,7 +431,7 @@
                                     </p>
                                     <hr>
                                     <p class="mb-5"><h2>Exploratory Data Analysis (EDA)</h2>
-                                        <p>At this point, I already had taken a first taste of the data, and moved onto exploring it a bit more now that were clean:</p>
+                                        <p>By this point, I had already gotten a first look at the data and was ready to dive deeper now that it was cleaned:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/11_clean_describe.PNG" alt="eda_car_data">
                                         <p>First look in the clean data:
                                             <ul>
@@ -445,13 +445,13 @@
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Price_distribution_plot.png" alt="eda_car_data">
                                         <p>Followed, similar process for the engine sizes and found that the majority of cars have engines between 1,000 cc and 2,000 cc, which is typical for personal vehicles:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/engine_distribution.png" alt="eda_car_data">
-                                        <p>And the dame for mileage, where most cars have mileage between 50,000 and 200,000 kilometers, with very few having extremely high or low mileage:</p>
+                                        <p>And the same for mileage, where most cars have mileage between 50,000 and 200,000 kilometers, with very few having extremely high or low mileage:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/mileage_distribution.png" alt="eda_car_data">
                                         <p>Then, I looked at my categorical data, starting with fuel types, where by far the most common fuel types are Petrol and Diesel, consisting almost the 91% of the total listings.
-                                           Another noticable insight here, is that almost one in everey twenty cars sold, use Gas/lpg as a fuel:</p>
+                                           Another noticable insight here, is that almost one in every twenty cars sold, use Gas/lpg as a fuel:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/13_plot_fuel_types.PNG" alt="eda_car_data">
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/fuel_types.png" alt="eda_car_data">
-                                        <p>Lastly, looked at the number of listings by season, that are fairly even across seasons, with a slight increase during the Spring:</p>
+                                        <p>Lastly, I looked at the number of listings by season. They are fairly even across seasons, with a slight increase during the Spring:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/14_plotting_the_listings_by_season.PNG" alt="eda_car_data">
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/listings_by_season.png" alt="eda_car_data">
                                     </p>
@@ -464,10 +464,10 @@
                                         <p>From this, I could see that:
                                             <ul>
                                                 <li>The mean prices across the three seasons—Winter (€14,290), Spring (€14,256), and Summer (€14,745)—are relatively close. The mean increase from winter to summer of 3.18%, and the median increase in the same period suggests that, overall, car prices are fairly stable throughout the year, with no drastic seasonal fluctuations.</li>
-                                                <li>More, it contradicts the initial hypothesis, that car prices tend to rise inthe winter. The data at hand, so the exact opposite, with car prices increasing during the summer.</li>
+                                                <li>More, it contradicts the initial hypothesis, that car prices tend to rise in the winter. The data at hand show the exact opposite; car prices increase during the summer.</li>
                                             </ul>
                                         </p>
-                                        <p>So, what if I tried to make the similar comparisons in various segments of the data?</p>
+                                        <p>So, what if I tried to make similar comparisons in various segments of the data?</p>
                                         <p>I intially segmented the data based on engine sizes, using the Greek vehicle tax categories as a framework:</p>
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/16_count_car_by_price_category.PNG" alt="hypothesis_car_data"> 
                                         <p>And used a bar graph to quickly view them:</p>
@@ -477,9 +477,9 @@
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Mean_Price_Trends_by_Engine_Category_&_Season.png" alt="hypothesis_car_data">
                                         <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.SeasonalCarPrices/Median_Price_Trends_by_Engine_Category_&_Season.png" alt="hypothesis_car_data">
                                         <p>Both graphs are consistent in indicating that car prices tend to increase from Winter to Summer. This suggests a seasonal trend where prices 
-                                            rise as we move toward the summer months, which is again contradicting my initial hypothesis.What is more, the flatter trend for smaller 
-                                            engine categories (A, B) in the second and third graph suggests that these categories don't contribute much to the overall price increases from the winter to the summer.</p>
-                                        <p>I followed the same logic, to explore further segments of my data, starting with mileage categories and season:</p>
+                                            rise as we move toward the summer months, which is again contradicting my initial hypothesis. What is more, the flatter trend for smaller 
+                                            engine categories (A, B) in the second and third graph suggests that these categories don't contribute much to the overall price increases from the winter to summer.</p>
+                                        <p>To explore further segments of my dataI followed the same logic starting with mileage categories and season:</p>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <p>Mean Price Trends by Mileage Category and Season</p>
@@ -518,7 +518,7 @@
                                             <ul>
                                                 <li>The overal <strong>Mean</strong> price tends to increace by <strong>3.18%</strong>, while the <strong>Median</strong> in the same period increases by <strong>4.36%</strong>.</li>
                                                 <li>Cars with <strong>larger engine sizes</strong> appear to drive the mean price increase from winter to summer.</li>
-                                                <li>In general, the <em>mean tends to increase more sharpy than the median</em>, suggesting that a small amount og listings with extreme values in mileage, price, and engine sizes still  make their presence felt.</li>
+                                                <li>In general, the <em>mean tends to increase more sharpy than the median</em>, suggesting that a small amount of listings with extreme values in mileage, price, and engine sizes still have a noticeable impact.</li>
                                             </ul>
                                         </p>
                                         <p>There is plenty to do to expand this project, like including cars priced below 1,500€, which were excluded from this round, and explore motorbikes as well. 
