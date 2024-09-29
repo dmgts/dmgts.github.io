@@ -616,7 +616,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">How Early Years founding around the world looks like compared to educational level</h2>
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Ireland's Rental Market</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -627,25 +627,78 @@
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-5">
                                         In this project, I focused on analyzing the current rental market in Ireland by scrapping real-time data from two major property websites, 
-                                        daft.ie and myhome.ie, in late September 2024. Using Tableau, I visualized the data to create an interactive dashboard, allowing for an 
-                                        in-depth look at trends in rental prices and property availability across different counties. This project helped me better understand 
-                                        the housing market dynamics and sharpened my skills in data scraping and visualization. 
+                                        daft.ie and myhome.ie, in late September 2024. Using Tableau, I visualized the data to create an 
+                                        <strong><a href="https://public.tableau.com/app/profile/dimitrios.gatsos/viz/Ireland_dash/irish_rentals_dash" target="_blank">interactive dashboard</a></strong>, 
+                                        allowing for an in-depth look at trends in rental prices and property availability across different counties. 
+                                        This project helped me better understand the housing market dynamics and sharpened my skills in data scraping and visualization. 
                                     </p>
                                     <hr>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <p class="mb-5">
+                                        <p>Here are some key insights from my analysis of Ireland's rental market.</p>
+                                        <ul>
+                                            <li><strong>96% of total listings</strong> fall in the <strong>€500 to €4700</strong> range, with <strong>66%</strong> of these listings found in and around <strong>Dublin</strong>.</li>
+                                            <li><strong>The rent-to-income ratio</strong> in the same areas is <strong>35%</strong> for a couple, with a mean income of <strong>€6380</strong> and mean rent of <strong>€2228</strong>.</li>
+                                            <li>The counties around the four major cities - <strong>Dublin, Cork, Limerick, and Galway</strong> - have a mean rent of <strong>€2159</strong>, which is almost <strong>28% higher</strong> than the rest of the counties where the mean rent is <strong>€1690</strong>.</li>
+                                        </ul>
                                     </p>
                                     <hr>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <p class="mb-5">
+                                        <p>For this project, I developed two Python-based scrapers using Selenium to extract rental data from daft.ie and myhome.ie. 
+                                        Both scrapers focus on gathering key details such as price, location, and property characteristics, but they differ in how they handle 
+                                        HTML variations between the websites.
+                                        
+                                        The daft.ie scraper collects raw data and applies cleaning and formatting functions (e.g., clean_price(), extract_info())
+                                        after the extraction.</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/daft_scrapper.png" alt="p1_ireland">
+                                        <p>In contrast, the myhome.ie scraper formats and cleans data during the extraction process, 
+                                            streamlining the data pipeline by integrating these steps directly into the scraping function.</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/myhome_scrapper.png" alt="p2_ireland">
                                     </p>
                                     <hr>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <p class="mb-5"></p>
+                                        <p>Only around 100 listings have a price higher than €4700, Including some extreme ones. The rest 96% of total listings 
+                                            cost less than €4700, with 66% of these listings -or 1619 properties- found in and around county Dublin.</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/boxplot.PNG" alt="p1_ireland">
                                     </p>
                                     <hr>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <p>The rental landscape in Ireland reveals a significant divide between urban and rural areas, particularly around the major cities of Dublin, Cork, Limerick, and Galway. 
+                                        In these urban regions, the mean rent is €2159, making it nearly 28% higher than in the more rural counties, where the average rent is €1690. 
+                                        This disparity highlights the increased demand for housing in and around these major urban hubs, which drives prices higher.</p>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p>Only around the major cities</p>
+                                            <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/around_major_cities.PNG" alt="p3_ireland">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>Excluding major cities</p>
+                                            <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/without_major_cities.PNG" alt="p4_ireland">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p class="mb-5">
+                                        Among the 2555 properties analyzed, 1992 have a recorded furnished status. Of these, the overwhelming majority
+                                         —1841 furnished properties— command a mean rent of €2210. In contrast, the 151 unfurnished properties have a significantly lower mean rent,
+                                          averaging €1355. This data reveals a clear rental premium associated with furnished properties, suggesting that renters are willing to pay
+                                           more for the convenience of a fully equipped living space</p>
+                                        <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/furnished_status.PNG" alt="p5_ireland">
+                                    <hr>
+                                    <p class="mb-5">
+                                        Our analysis covers properties across ten different property types, yet only three of these—House, Apartment, and Flat—dominate the 
+                                        listings. These categories account for a total of 2407 out of 2555 listings, highlighting their prevalence in the rental market. 
+                                        This concentration suggests that these three property types are the primary options available for renters, with other types playing a 
+                                        much smaller role in the overall market.</p>
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/pj.renting_ireland/Most_ads_are_foor those_three_categories.PNG" alt="p6_ireland">
+                                    <hr>
+                                    <p class="mb-5">
+                                        Lastly, I added some really useful customization features to my Tableau dashboard, making it more interactive and easier to use. 
+                                        For instance, with filters for counties and property types, users can dive into the data based on their interests. 
+                                        These filters let people explore rental trends in specific regions or for particular types of properties, and the changes they make 
+                                        are applied across all charts and maps instantly. This feature really enhances the overall experience, turning the dashboard into a 
+                                        powerful tool for those who want to get detailed insights quickly and easily.
                                     </p>
                                     <hr>
-                                    
+                                    <p>Thanks for reading. Some information have been altered to ensure privacy. Feel free to reach out for any comment.</p>
+                                    <hr>
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
