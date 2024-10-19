@@ -76,10 +76,10 @@
                         </div>
                     </div>               
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/Hubspot-crm-integrations.png" alt="Hubspot BGpatrasso"/>
+                            </div><img class="img-fluid" src="assets/img/portfolio/frontimage.jpg" alt="Google Data Analytics Proj 1"/>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5">
@@ -103,13 +103,13 @@
                             </div><img class="img-fluid" src="assets/img/portfolio/SW1.PNG" alt="Analyzing Value in the 'Star Wars Unlimited' Collection: A Data-Driven Approach"/>
                         </div>
                     </div>
-                    <!--<div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div><img class="img-fluid" src="assets/img/portfolio/gh;khg.png" alt="Google Data Analytics Proj 1"/>
+                            </div><img class="img-fluid" src="assets/img/portfolio/Hubspot-crm-integrations.png" alt="Hubspot BGpatrasso"/>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </section>
@@ -716,17 +716,46 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Maximizing Car's Selling Value: A Geographic Price Analysis</h2>
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">User Growth Trajectory Calculation</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
                                         <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                                         <div class="divider-custom-line"></div>
                                     </div>
-                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/smart1.jpg" alt="Maximizing Car's Selling Value: A Geographic Price Analysis"/>
+                                    <!-- Portfolio Modal - Image--><img class="img-fluid rounded mb-5" src="assets/img/portfolio/frontimage.jpg" alt="User Growth Trajectory Calculation"/>
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-5">Uncover the best city to sell your car in Greece with our detailed comparison of car prices in Athens and Patras. Learn where you can get the most value for your vehicle today! gnk domi pou tha eprepe na akoloutho Main Q/problem: Is there a better region to sell my Smart Fortwo? Planned strategy/ what I actually did: scrap periodically, compare prices (mean max, klp) Outcomes: btika oti i patra gamaei, isos epeidi einai pio mikri agora i eikasia mou</p>
-                                    <p class="mb-5">This project's presentation is still on development. Further information will be published soon.</p>
+                                    <video controls style="width: 100%; max-width: 800px;">
+                                        <source src="assets/img/portfolio/pj.calculatingGrowth/Calculate_growth_vid.mp4" type="video/mp4">
+                                    </video>
+                                    <p class="text-left mb-5">In this project, I've developed a straightforward model to calculate the monthly growth trajectory of our product's user base. The model consists of three main sections:</p>
+                                    <h3 class="mt-4">1. Parameters Section</h3>
+                                        <p class="text-left mb-5">This area allows for adjusting key variables that affect growth projections. The parameters include:</p>
+                                            <ul>
+                                                <li class="text-left"><strong>Initial User Base:</strong> I assum an initial user base of 10 users, but this number can be adjusted.</li>
+                                                <li class="text-left"><strong>Conversion Behavior:</strong> Responses to the product are categorized into three groups:
+                                                <ul>
+                                                    <li class="text-left"><strong>Yes (Immediate Adoption):</strong> Users who convert within the specified timeframe.</li>
+                                                    <li class="text-left"><strong>No (Later Conversion):</strong> Users who convert after a delay.</li>
+                                                    <li class="text-left"><strong>Never:</strong> Users who never convert.</li>
+                                                </ul>
+                                                These responses are modeled based on word-of-mouth marketing, assuming users influence others through product recommendations.
+                                                </li>
+                                                <li class="text-left"><strong>Conversion Time Frame:</strong> Users are grouped into those who convert within the predefined conversion week and those who convert later, which is also adjustable.</li>
+                                                <li class="text-left"><strong>Influence Factor:</strong> This represents the number of additional users each initial user is expected to influence over a year. In the example, we assume each user influences 20 others.</li>
+                                                <li class="text-left"><strong>Market Cap:</strong> This defines the total potential market size. It helps track how close we are to saturating the available market.</li>
+                                            </ul>
+                                    <h3 class="mt-4">2. Calculation Section</h3>
+                                        <p class="text-left mb-5">      The model calculates how user conversions will unfold over time, considering the initial user base, the conversion behavior, 
+                                            and influence factor. For example, users who say "Yes" convert within the conversion week, while "No" users convert at a later stage. We also estimate 
+                                            how many people each user will influence and factor that into the growth projections.</p>
+                                    <h3 class="mt-4">3. Visualization Section</h3>
+                                        <p class="text-left mb-5">To help visualize the growth, we've created graphs that show user growth over a 12-month cycle, starting with the initial 10 users. 
+                                            These visualizations provide insights into when we'll reach the market cap and how quickly the user base expands, based on the given parameters.</p>
+                                        
+                                        <p class="text-left mb-5">This model offers flexibility in adjusting key factors that influence growth and provides a clear visual representation of how the user 
+                                            base can expand over time.</p>
+                                    
                                     <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
                                 </div>
                             </div>
